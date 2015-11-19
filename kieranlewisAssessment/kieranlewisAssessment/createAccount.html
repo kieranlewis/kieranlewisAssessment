@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Add Course</title>
-	<meta charset="utf-8" />
+    <title>Create Account</title>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body data-conroller="courses">
     <header>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -16,7 +16,7 @@
                 </div>
                 <div>
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Students</a></li>
+                        <li class="active"><a href="index.html">Courses</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="createAccount.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -26,24 +26,20 @@
             </div>
         </nav>
     </header>
-
-    <div class="container">
-        <h2>Add Course</h2>
-        <form role="form" name="create">
-            <div class="form-group">
-                <label for="coursenameinput">Course Name:</label>
-                <input type="text" class="form-control" id="CourseNameinput" required />
-            </div>
-            <div class="form-group">
-                <label for="startdateinput">Start Date:</label>
-                <input type="text" class="form-control" id="StartDateinput" required />
-            </div>
-            <div class="form-group">
-                <label for="enddateinput">End Date:</label>
-                <input type="text" class="form-control" id="EndDateinput" required />
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-    </div>
-</body>
+    <body>
+        <div class="container">
+            <h2>Create Account</h2>
+            <form role="form">
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" class="form-control" id="email" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" />
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </body>
 </html>
