@@ -1,14 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Add Course</title>
 	<meta charset="utf-8" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="scripts/indexSetup.js"></script>
 </head>
-<body data-conroller="courses">
+<body>
     <header>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -17,7 +16,7 @@
                 </div>
                 <div>
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Courses</a></li>
+                        <li class="active"><a href="index.html">Students</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -29,21 +28,24 @@
     </header>
 
     <div class="container">
-        <a href="addCourse.html">Add course</a>
-        <div class="table">
-            <table class="table" id="tblcourse">
-                <thead>
-                    <tr>
-                        <th>Course Name</th>
-                        <th>Start Date</th>
-                        <th>Finish Date</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="tblcoursecontent"></tbody>
-            </table>
-        </div>
+        <h2>Add Course</h2>
+        <form role="form" name="create">
+            <div class="form-group">
+                <label for="coursenameinput">Course Name:</label>
+                <input type="text" class="form-control" id="CourseNameinput" required />
+            </div>
+            <div class="form-group">
+                <label for="startdateinput">Start Date:</label>
+                <input type="text" class="form-control" id="StartDateinput" required />
+            </div>
+            <div class="form-group">
+                <label for="enddateinput">End Date:</label>
+                <input type="text" class="form-control" id="EndDateinput" required />
+            </div>
+            <div class="btn-toolbar">
+                <button type="submit" class="btn-toolbar btn-default">Submit</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>
