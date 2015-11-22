@@ -16,9 +16,17 @@ namespace ContosoUniversityAssessment.Controllers
         private SchoolContext db = new SchoolContext();
 
         // GET: Assignments
-        public ActionResult Index()
+        public ViewResult Index(string searchString)
         {
-            return View(db.Assignment.ToList());
+            var assignments = from s in db.Assignment select s;
+            int x;
+
+            if (!string.IsNullOrEmpty(searchString) | int.TryParse(searchString, out x))
+            {
+                assignments = assignments.Where(s => s.CourseID.Equals(x));
+            }
+
+            return View(assignments.ToList());
         }
 
         // GET: Assignments/Details/5

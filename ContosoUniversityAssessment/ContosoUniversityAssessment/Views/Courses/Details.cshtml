@@ -11,6 +11,14 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseID)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.CourseName)
         </dt>
 
@@ -27,4 +35,8 @@
         </dd>
 
     </dl>
+</div>
+    
+<div>
+    @Html.ActionLink("View Assignments", "Index", "Assignments")
 </div>
