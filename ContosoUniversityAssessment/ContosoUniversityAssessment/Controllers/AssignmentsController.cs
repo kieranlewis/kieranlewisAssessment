@@ -14,11 +14,13 @@ namespace ContosoUniversityAssessment.Controllers
     public class AssignmentsController : Controller
     {
         private SchoolContext db = new SchoolContext();
+        private string course;
 
         // GET: Assignments
         public ActionResult Index(string courseID)
         {
             var assignments = from s in db.Assignment select s;
+            course = courseID;
             int x;
 
             if (!string.IsNullOrEmpty(courseID) | int.TryParse(courseID, out x))

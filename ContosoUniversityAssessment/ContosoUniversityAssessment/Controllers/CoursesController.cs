@@ -118,6 +118,14 @@ namespace ContosoUniversityAssessment.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Course course = db.Courses.Find(id);
+
+            foreach (Assignment a in db.Assignment)
+            {
+                if(a.CourseID == course.CourseID)
+                {
+                    db.Assignment.Remove(a);
+                }
+            }
             db.Courses.Remove(course);
             db.SaveChanges();
             return RedirectToAction("Index");
