@@ -1,9 +1,11 @@
 ﻿using ContosoUniversityAssessment.Models;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using MySql.Data.Entity;
 
 namespace ContosoUniversityAssessment.DAL
 {
+    [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class SchoolContext : DbContext
     {
         public SchoolContext() : base("SchoolContext")
