@@ -16,9 +16,16 @@ namespace ContosoUniversityAssessment.Controllers
         private SchoolContext db = new SchoolContext();
 
         // GET: Students
-        public ActionResult Index()
+        public ViewResult Index(string searchString)
         {
-            return View(db.Students.ToList());
+            var students = from s in db.Students select s;
+
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.LastName.Contains(searchString));
+            }
+
+            return View(students.ToList());
         }
 
         // GET: Students/Details/5

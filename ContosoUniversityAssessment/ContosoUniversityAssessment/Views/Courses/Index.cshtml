@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "Index";
-    var createAssignment = "~/Views/Assignments/Create";
 }
 
 <h2>Index</h2>
@@ -10,6 +9,15 @@
 <p>
     @Html.ActionLink("Create New Course", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find By Course Name: @Html.TextBox("searchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
