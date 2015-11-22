@@ -7,8 +7,8 @@ namespace ContosoUniversityAssessment.Models
 {
     public class StudentWork
     {
-        public int CourseID { get; set; }
-        public string CourseName { get; set; }
-        public int Credits { get; set; }
+        public int StudentWorkID { get; set; }
+        public int StudentID { get; set; }
+        public string LinkName { get; set; }
     }
 }
