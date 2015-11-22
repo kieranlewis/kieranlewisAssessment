@@ -29,19 +29,6 @@ namespace ContosoUniversityAssessment.Controllers
             return View(assignments.ToList());
         }
 
-        public ActionResult Search(string courseID)
-        {
-            var assignments = from s in db.Assignment select s;
-            int x;
-
-            if (!string.IsNullOrEmpty(courseID) | int.TryParse(courseID, out x))
-            {
-                assignments = assignments.Where(s => s.CourseID.Equals(x));
-            }
-
-            return View(assignments.ToList());
-        }
-
         // GET: Assignments/Details/5
         public ActionResult Details(int? id)
         {
